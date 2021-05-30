@@ -13,7 +13,7 @@ The features of CUB, AWA, FLO and SUN dataset can be download here: <http://data
 - To carry out architecture search, run ```scripts.sh``` with all the parameters set properly. This code will generate the output files regarding to the searched architectures to ```./output``` directory.
 Note that the validation performance in this step does not indicate the final performance of the architecture. 
 
-- To evaluate the searched architectures, one must train the architecture from scratch using ```clswgan_retrain.py```. Notably, the ```genotype_G``` and ```genotype_G``` variable need to set as the obtained generator and discriminator architecture respectively.
+- To evaluate the searched architectures, one must train the architecture from scratch using ```clswgan_retrain.py```. Notably, the ```genotype_G``` and ```genotype_G``` variable need to set as the obtained generator and discriminator architecture respectively. The trained models for each dataset are saved to ```./trained_models``` directory, which is further used by ```generate_feature.py``` to synthesize unseen class features for each dataset.
 ## Visualization:
 The learned architectures for generator and discriminator can be visualized through ```plot.py```. (Package graphviz is required to visualize the learned architectures.)
 

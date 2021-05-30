@@ -5,13 +5,18 @@ The code for ZeroNAS: Differentiable Generative Adversarial Networks Search for 
 python==3.6, pytorch==0.3.1 and other dependencies in requirements.txt
 ```
 
-Note: Package graphviz is required to visualize the learned cells.
+Note: The Graphviz software is required before installing the graphviz python package through ```sudo apt-get install graphviz```.
 ## Datasets:
 The code uses the ResNet101 features and seen/unseen splits provided by the paper: Feature Generating Networks for Zero-Shot Learning.
-The features can be download here: http://datasets.d2.mpi-inf.mpg.de/xian/xlsa17.zip
-## Architecture Search and Evaluation:
+The features of CUB, AWA, FLO and SUN dataset can be download here: <http://datasets.d2.mpi-inf.mpg.de/xian/xlsa17.zip>
+## Files:
+## Running instructions:
+- To carry out architecture search, run ```scripts.sh``` with all the parameters set properly. This code will generate the output files regarding to the searched architectures to ```./output``` directory.
+Note that the validation performance in this step does not indicate the final performance of the architecture. 
+
+- To evaluate the searched architectures, one must train the architecture from scratch using ```clswgan_retrain.py```. Notably, the ```genotype_G``` and ```genotype_G``` variable need to set as the obtained generator and discriminator architecture respectively.
 ## Visualization:
-The learned architectures for generator and discriminator can be visualized through plot.py. 
+The learned architectures for generator and discriminator can be visualized through plot.py. (Package graphviz is required to visualize the learned architectures.)
 
 For example:
 ```

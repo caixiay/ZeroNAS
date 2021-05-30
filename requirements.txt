@@ -1,0 +1,11 @@
+certifi==2020.6.20
+graphviz==0.14.2
+joblib==0.14.1
+numpy==1.18.5
+python-dateutil==2.8.1
+PyYAML==5.1.2
+scikit-learn==0.22.2.post1
+scipy==1.4.1
+six==1.16.0
+sklearn==0.0
+torch==0.3.1

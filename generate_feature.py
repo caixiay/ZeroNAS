@@ -127,9 +127,6 @@ if opt.cuda:
     netG.cuda()
 unseen_classes = data.unseenclasses
 syn_feature, syn_label = generate_syn_feature(netG, unseen_classes, data.attribute, opt.syn_num)
-# syn_feature = torch.cat((syn_feature1, syn_feature), 0)
-# syn_label = torch.cat((syn_label1, syn_label), 0)
-# print('haha', syn_feature1.size(), syn_label1.size())
 cls = classifier2.CLASSIFIER(syn_feature, util.map_label(syn_label, data.unseenclasses), data, data.unseenclasses.size(0), opt.cuda, opt.classifier_lr, 0.5, 25, opt.syn_num, False)
 acc = cls.acc
 print('unseen class accuracy= ', acc)
